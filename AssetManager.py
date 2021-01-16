@@ -42,7 +42,7 @@ class AssetManager:
         max_width = max(map(len, level_map))
 
         # дополняем каждую строку пустыми клетками ('.')
-        self.assets[(filename,)] = list(map(lambda x: x.ljust(max_width, '.'), level_map))
+       # self.assets[(filename,)] = list(map(lambda x: x.ljust(max_width, '.'), level_map))
         return self.assets[(filename,)]
 
 
