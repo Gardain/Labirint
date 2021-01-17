@@ -10,6 +10,6 @@ class FLoor(LevelSprite):
 class FloorGroup(LevelGroup):
     def __init__(self, level):
         super().__init__(level)
-        self.key = ['.', '@']
+        self.key = ['.', '@', '2']
         self.sprite_class = FLoor
         self.create_sprites()
