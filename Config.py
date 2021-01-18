@@ -1,9 +1,5 @@
-import pygame
-
-
 class Config:
     def __init__(self):
-        pygame.mouse.set_visible(False)
         self.dict = {}
 
     def get_value(self, param):
