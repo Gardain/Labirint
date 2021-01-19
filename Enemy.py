@@ -1,6 +1,8 @@
+import CreateScreen
+import time
 import pygame
-from copy import deepcopy
 
+from copy import deepcopy
 from LevelGroup import LevelGroup
 from LevelSprite import LevelSprite
 from game_config import config
@@ -13,7 +15,7 @@ class Enemy(LevelSprite):
         self.search = WaveSearchPath()
         self.walls = ['~', '#']
         self.player = None
-
+        self.is_can_move = True
         self.counter = 0
 
     def get_coords(self):
@@ -48,16 +50,21 @@ class Enemy(LevelSprite):
         self.height = height
 
     def move(self):
-        level = self.level_to_search()
-        path = self.search.search((self.row, self.col), (self.player.row, self.player.col), level)
-        self.row, self.col = path[1]
+        if self.is_can_move:
+            level = self.level_to_search()
+            path = self.search.search((self.row, self.col), (self.player.row, self.player.col), level)
+            self.row, self.col = path[1]
+        else:
+            exit(0)
 
     def update(self):
         super().update()
-
+        if self.get_coords()[0] + 10 == self.player.get_coords()[0]:
+            if self.get_coords()[1] + 10 == self.player.get_coords()[1]:
+                self.is_can_move = False
         self.counter += 1
         # у нас 60 кадров - значит враг будет перемещаться каждые 30 кадров - один раз в пол секунды.
-        if self.counter % 60  == 0:
+        if self.counter % 20 == 0:
             self.move()
 
 
