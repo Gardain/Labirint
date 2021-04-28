@@ -55,7 +55,7 @@ class Enemy(LevelSprite):
             path = self.search.search((self.row, self.col), (self.player.row, self.player.col), level)
             self.row, self.col = path[1]
         else:
-            exit(0)
+            exit(0) # Пользователь должен страдать
 
     def update(self):
         super().update()
