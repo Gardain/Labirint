@@ -1,9 +1,9 @@
 import pygame
 
-from LevelGroup import LevelGroup
-from LevelSprite import LevelSprite
+from levels.LevelGroup import LevelGroup
+from textures.LevelSprite import LevelSprite
 from game_config import config
-from Camera import camera
+from screen.Camera import camera
 
 
 class Player(LevelSprite):

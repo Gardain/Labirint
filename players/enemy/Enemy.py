@@ -1,8 +1,8 @@
 import pygame
 
 from copy import deepcopy
-from LevelGroup import LevelGroup
-from LevelSprite import LevelSprite
+from levels.LevelGroup import LevelGroup
+from textures.LevelSprite import LevelSprite
 from game_config import config
 from WaveSearchPath import WaveSearchPath
 

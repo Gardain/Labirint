@@ -11,7 +11,7 @@ class AssetManager:
         if (name, colorkey) in self.assets:
             return self.assets[(name, colorkey)]
 
-        fullname = os.path.join('data', name)
+        fullname = os.path.join('data/textures/data', name)
         # если файл не существует, то выходим
         if not os.path.isfile(fullname):
             print(f"Файл с изображением '{fullname}' не найден")
@@ -30,7 +30,7 @@ class AssetManager:
     def load_level(self, filename):
         if (filename,) in self.assets:
             return self.assets[(filename,)]
-        filename = os.path.join('data', filename)
+        filename = os.path.join('data/levels/data', filename)
         if not os.path.isfile(filename):
             print(f"Файл с уровнем '{filename}' не найден")
             sys.exit()

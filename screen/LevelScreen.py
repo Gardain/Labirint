@@ -1,11 +1,11 @@
 import pygame
 
-from Finish import FinishGroup
-from Floor import FloorGroup
-from Lava import LavaGroup
+from textures.Finish import FinishGroup
+from textures.Floor import FloorGroup
+from textures.Lava import LavaGroup
 from game_config import config
 from AssetManager import assetManager
-from Box import BoxGroup
+from textures.Box import BoxGroup
 from Player import PlayerGroup
 from Camera import camera
 from Enemy import EnemyGroup

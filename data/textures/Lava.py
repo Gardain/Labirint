@@ -1,4 +1,4 @@
-from LevelGroup import LevelGroup
+from levels.LevelGroup import LevelGroup
 from LevelSprite import LevelSprite
 
 
