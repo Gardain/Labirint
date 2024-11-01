@@ -19,6 +19,7 @@ class StartScreen:
             self.draw_animate()
 
     def draw_background(self):
+        # Масштабируем изображение фона в зависимости от текущих размеров окна
         bg = pygame.transform.scale(assetManager.load_image('start_screen_bg.jpg'), (self.width, self.height))
         self.screen.blit(bg, (0, 0))
 
@@ -27,6 +28,7 @@ class StartScreen:
         self.animate = True
 
     def draw_animate(self):
+        # Анимация случайных белых пикселей на экране
         for i in range(15000):
             self.screen.fill(pygame.Color('white'),
                              (random.random() * self.width,
@@ -42,6 +44,8 @@ class StartScreen:
         font_size = 40
         font = pygame.font.Font(None, font_size)
         text_rendered_lines = []
+
+        # Отрисовка текста
         for text_line in text_lines:
             string_rendered = font.render(text_line, True, color)
             rect = string_rendered.get_rect()
@@ -49,9 +53,12 @@ class StartScreen:
             rect.y = offset_y
             offset_y += rect.height + line_offset
             text_rendered_lines.append((string_rendered, rect))
+
         width = max(*text_rendered_lines, key=lambda x: x[1].width)[1].width
         height = offset_y
         surface = pygame.Surface((width, height), pygame.SRCALPHA)
+
+        # Центрируем текст в середине экрана
         for text_line in text_rendered_lines:
             text, rect = text_line
             rect.x = width // 2 - rect.width // 2
@@ -61,8 +68,14 @@ class StartScreen:
         self.screen.blit(surface, pygame.Rect(x, y, width, height))
 
     def on_event(self, event):
+        # Запуск анимации при нажатии клавиши
         if event.type == pygame.KEYUP:
             self.start_animate()
+        # Обновление размеров окна при изменении его размера
+        elif event.type == pygame.VIDEORESIZE:
+            self.width, self.height = event.w, event.h  # Обновляем текущие размеры
+            config.set_value('width', self.width)  # Обновляем ширину в config
+            config.set_value('height', self.height)  # Обновляем высоту в config
 
     def update(self):
         pass

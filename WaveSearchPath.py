@@ -1,4 +1,3 @@
-import pygame
 from copy import deepcopy
 from collections import deque
 

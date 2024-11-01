@@ -1,5 +1,3 @@
-import CreateScreen
-import time
 import pygame
 
 from copy import deepcopy
