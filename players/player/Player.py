@@ -1,8 +1,8 @@
 import pygame
 
-from levels.LevelGroup import LevelGroup
-from textures.LevelSprite import LevelSprite
-from game_config import config
+from data.levels.LevelGroup import LevelGroup
+from data.textures.LevelSprite import LevelSprite
+from config.Config import config
 from screen.Camera import camera
 
 

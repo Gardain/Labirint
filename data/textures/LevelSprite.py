@@ -1,5 +1,5 @@
 import pygame
-from config.game_config import config
+from config.Config import config
 from AssetManager import assetManager
 
 

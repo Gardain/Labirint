@@ -1,14 +1,14 @@
 import pygame
 
-from textures.Finish import FinishGroup
-from textures.Floor import FloorGroup
-from textures.Lava import LavaGroup
-from game_config import config
+from data.textures.Finish import FinishGroup
+from data.textures.Floor import FloorGroup
+from data.textures.Lava import LavaGroup
+from config.Config import config
 from AssetManager import assetManager
-from textures.Box import BoxGroup
-from Player import PlayerGroup
-from Camera import camera
-from Enemy import EnemyGroup
+from data.textures.Box import BoxGroup
+from players.player.Player import PlayerGroup
+from screen.Camera import camera
+from players.enemy.Enemy import EnemyGroup
 
 
 class LevelScreen:
@@ -52,7 +52,7 @@ class LevelScreen:
             self.next_level()
 
     def load_level(self, level):
-        return assetManager.load_level(f'levels/{level}.txt')
+        return assetManager.load_level(f'{level}.txt')
 
     def update(self):
         for group_name in self.groups:

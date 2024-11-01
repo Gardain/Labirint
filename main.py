@@ -1,8 +1,7 @@
 import pygame
-import NumberLevel
-from game_config import config
+from screen import NumberLevel
+from config.Config import config
 from GameMain import GameMain
-from StartScreen import StartScreen
 
 
 def initialize_game():
@@ -44,7 +43,7 @@ def main_game_loop(screen, clock, game, fps=60):
 
 def show_game_over(screen, width, height, duration=5000):
     """Отображение экрана 'Game Over' на указанное время."""
-    image = pygame.image.load('data/gameover.png')
+    image = pygame.image.load('data/textures/data/gameover.png')
 
     game_over_start_time = pygame.time.get_ticks()
     while pygame.time.get_ticks() - game_over_start_time < duration:

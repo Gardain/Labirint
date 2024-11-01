@@ -1,5 +1,5 @@
-from StartScreen import StartScreen
-from LevelScreen import LevelScreen
+from screen.StartScreen import StartScreen
+from screen.LevelScreen import LevelScreen
 
 START_SCREEN = 0
 MAIN_SCREEN = 1

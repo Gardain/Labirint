@@ -1,10 +1,10 @@
 import pygame
 
 from copy import deepcopy
-from levels.LevelGroup import LevelGroup
-from textures.LevelSprite import LevelSprite
-from game_config import config
-from WaveSearchPath import WaveSearchPath
+from data.levels.LevelGroup import LevelGroup
+from data.textures.LevelSprite import LevelSprite
+from config.Config import config
+from .WaveSearchPath import WaveSearchPath
 
 
 class Enemy(LevelSprite):

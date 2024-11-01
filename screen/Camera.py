@@ -1,4 +1,4 @@
-from game_config import config
+from config.Config import config
 
 
 class Camera:

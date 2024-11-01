@@ -1,7 +1,7 @@
 from AssetManager import assetManager
 import pygame
 import random
-from game_config import config
+from config.Config import config
 
 
 class StartScreen:
@@ -37,7 +37,7 @@ class StartScreen:
             self.next_scene()
 
     def draw_text(self):
-        text_lines = ["ЗАСТАВКА", "Нажмите любую клавишу"]
+        text_lines = ["МЕНЮ", "Нажмите любую клавишу"]
         offset_x, offset_y = 0, 0
         line_offset = 10
         color = pygame.Color('white')

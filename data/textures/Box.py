@@ -1,5 +1,5 @@
-from levels.LevelGroup import LevelGroup
-from LevelSprite import LevelSprite
+from data.levels.LevelGroup import LevelGroup
+from .LevelSprite import LevelSprite
 
 
 class Box(LevelSprite):
